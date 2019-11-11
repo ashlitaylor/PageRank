@@ -13077,14 +13077,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scalable-single-machine-PageRank-on-70M-edge-graph">Scalable single-machine PageRank on 70M edge graph<a class="anchor-link" href="#Scalable-single-machine-PageRank-on-70M-edge-graph">&#182;</a></h2><h5 id="PageRank-algorithm-implementation">PageRank algorithm implementation<a class="anchor-link" href="#PageRank-algorithm-implementation">&#182;</a></h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>PageRank, named after Google co-founder Larry Page, is an algorithm that measures webpage importance. According to Google:</p>
+<p><img src="https://raw.githubusercontent.com/ashlitaylor/PageRank/master/pagerank.jpg" height="600" width="400"></p>
+<header> 
+    <h2 align="center"> SCALABLE SINGLE-MACHINE PAGERANK ON 70M EDGE GRAPH </h2>
+    <h6 align="center"> PageRank algorithm implementation </h6>
+</header><h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>PageRank, named after Google co-founder Larry Page, is an algorithm that measures webpage importance. According to Google:</p>
 <p><i>"PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other websites"</i></p>
 <p>The PageRank algorithm I implemented can scale to graph datasets with as many as billions of edges. Ordinarily, running such an algorithm on large datasets would require the use of computer clusters (e.g. Spark, Hadoop), however I implemented this algorithm using my computer's virtual memory.</p>
 <h4 id="Virtual-Memory">Virtual Memory<a class="anchor-link" href="#Virtual-Memory">&#182;</a></h4><p>The main idea is to place the dataset in your computer’s (unlimited) virtual memory, as it is often too big to fit in the RAM. When running algorithms on the dataset (e.g., PageRank), the operating system will automatically decide when to load the necessary data (subset of whole dataset) into RAM. See <a href = "http://poloclub.gatech.edu/mmap/">here</a> for more details on research on virtual memory mapping.</p>
