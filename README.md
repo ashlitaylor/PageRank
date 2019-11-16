@@ -32,12 +32,13 @@ This code was specifically designed for use on the LieJournal graph dataset, whi
 ### Run
 1. Since memory mapping works with binary files, the graph’s edge list needs to be converted into its binary format by running the following command at the terminal/command prompt (you only need to do this once):
 
-```python q1_utils.py convert <path-to-edgelist.txt>```
+    ```python q1_utils.py convert <path-to-edgelist.txt>```
 
-This generates 3 files:
-* A .bin binary file containing edges (source, target) in big-endian “int” C type
-* A .idx: binary file containing (node, degree) in little-endian “int” C type
-* A .json: metadata about the conversion process (required to run pagerank)
+    This generates 3 files:
+    * A .bin binary file containing edges (source, target) in big-endian “int” C type
+    * A .idx: binary file containing (node, degree) in little-endian “int” C type
+    * A .json: metadata about the conversion process (required to run pagerank)
+
 2. To execute the PageRank algorithm, type the following code into the command line/terminal:
 
 ```pypy q1_utils.py pagerank <path to JSON file for LiveJournal>```
