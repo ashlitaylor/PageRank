@@ -22,7 +22,7 @@ This code requires ##Python 3.6** or later and uses PyPy, which is a Just-In-Tim
 |:----------|:-------------|
 |Ubuntu |sudo apt-get install pypy|
 |MacOS |Install [Homebrew](https://brew.sh/), then run brew install pypy3.|
-|Windows |[Download](http://pypy.org/download.html#python2-7-compatible-pypy-5-4-1 )the package and then install it. |
+|Windows |[Download](http://pypy.org/download.html#python2-7-compatible-pypy-5-4-1 ) the package and then install it. |
 
 In the command line, run the following code from the q1_utils folder to learn more about the helper utility that was provided for this assignment.
 
