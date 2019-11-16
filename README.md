@@ -41,8 +41,8 @@ This code was specifically designed for use on the LieJournal graph dataset, whi
 
 2. To execute the PageRank algorithm, type the following code into the command line/terminal:
 
-```pypy q1_utils.py pagerank <path to JSON file for LiveJournal>```
+    ```pypy q1_utils.py pagerank <path to JSON file for LiveJournal>```
 
-This will output the 10 nodes witht he highest PageRank scores. The default number of iterations is 10. The number of iterations can be updated by adding the desired number to the end of the command:
-```pypy q1_utils.py pagerank toy-graph/toy-graph.json --iterations 25``
-A file in the format pagerank_nodes_n.txt  for “n” number of iterations will be created.
+    This will output the 10 nodes witht he highest PageRank scores. The default number of iterations is 10. The number of iterations can be updated by adding the desired number to the end of the command:
+    ```pypy q1_utils.py pagerank toy-graph/toy-graph.json --iterations 25``
+    A file in the format pagerank_nodes_n.txt  for “n” number of iterations will be created.
