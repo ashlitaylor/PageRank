@@ -30,6 +30,7 @@ In the command line, run the following code from the q1_utils folder to learn mo
 This code was specifically designed for use on the LieJournal graph dataset, which is an edge list file that can be obtained from the SNAP website here: [download](https://snap.stanford.edu/data/soc-LiveJournal1.html). The q1_utils.py and LiveJournal dataset files must be in the same directory/folder.
 
 ### Run
+To run the pagerank.py algorithm, follow the steps below. 
 1. Since memory mapping works with binary files, the graph’s edge list needs to be converted into its binary format by running the following command at the terminal/command prompt (you only need to do this once):
 
     ```python q1_utils.py convert <path-to-edgelist.txt>```
