@@ -16,12 +16,25 @@ The PageRank algorithm was used on the [LiveJournal]("https://snap.stanford.edu/
 The algorithm outputs the 10 nodes with the highest PageRank scores to a CSV file. 
 
 ### Prerequisites
-This code requires ##Python 3.X** and requires a TMDb API code to be input to run. To get a TMDb account and API Code:
-1. Get a [TMDb account](https://www.themoviedb.org/account/signup)
-2. Request an [API key](https://docs.google.com/document/d/e/2PACX-1vQkWjHiLS1Xu2HZNQ7Egv08l_DdPnugoxUOZ0ugqBNHWY529xWB417QoSS0MbIih6PS9gu1Y1D-NFDT/pub)
-3. Follow TMDb API [Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
+This code requires ##Python 3.6** or later and uses PyPy, which is a Just-In-Time compilation runtime for Python, which supports fast packing and unpacking. You will also need to download the q1_utils.py code to the desired work folder. To install PyPy:
+|OS |Instruction      |
+|:----------|:-------------|
+|Ubuntu |sudo apt-get install pypy|
+|MacOS |Install [Homebrew](https://brew.sh/), then run brew install pypy3.|
+|Windows |[Download](http://pypy.org/download.html#python2-7-compatible-pypy-5-4-1 )the package and then install it. |
+In the command line, run the following code from the q1_utils folder to learn more about the helper utility that was provided for this assignment.
+```pypy q1_utils.py --help```
+This code was specifically designed for use on the LieJournal graph dataset, which is an edge list file that can be obtained from the SNAP website here: [download](https://snap.stanford.edu/data/soc-LiveJournal1.html). The q1_utils.py and LiveJournal dataset files must be in the same directory/folder.
 
 ### Run
-In the terminal or command window, navigate to the folder where the script is located, and input the following command, substituting your API key:
-```python3 script.py <API_KEY>```
-This will run the 'script.py' file and execute the code, generating the two aforementioned CSV files. 
+1. Since memory mapping works with binary files, the graph’s edge list needs to be converted into its binary format by running the following command at the terminal/command prompt (you only need to do this once):
+```python q1_utils.py convert <path-to-edgelist.txt>```
+This generates 3 files:
+* A .bin binary file containing edges (source, target) in big-endian “int” C type
+* A .idx: binary file containing (node, degree) in little-endian “int” C type
+* A .json: metadata about the conversion process (required to run pagerank)
+2. To execute the PageRank algorithm, type the following code into the command line/terminal:
+```pypy q1_utils.py pagerank <path to JSON file for LiveJournal>```
+This will output the 10 nodes witht he highest PageRank scores. The default number of iterations is 10. The number of iterations can be updated by adding the desired number to the end of the command:
+```pypy q1_utils.py pagerank toy-graph/toy-graph.json --iterations 25``
+A file in the format pagerank_nodes_n.txt  for “n” number of iterations will be created.
